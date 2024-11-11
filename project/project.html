@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/project/style/">
+    <title>Document</title>
+</head>
+<body>
+
+  <!-- Barra de Navegación -->
+  <nav>
+    <ul>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#galeria">Galería</a></li>
+      <li><a href="#otros">Otros</a></li>
+    </ul>
+  </nav>
+
+  <!-- Sección de Inicio con Slider -->
+  <section id="inicio">
+    <h1>Biblioteca de Portadas de los Mundiales</h1>
+    <p>Bienvenido a la Biblioteca de Portadas de los Mundiales. Aquí encontrarás todas las portadas de los mundiales desde 1930 hasta la fecha.</p>
+
+    <!-- Slider con JavaScript -->
+    <div class="slider" id="slider">
+      <div class="slides">
+        <div class="slide"><img src="/project/img/portada1930.jpg" alt="Mundial 1930"></div>
+        <div class="slide"><img src="/project/img/portada1950.jpg" alt="Mundial 1950"></div>
+        <div class="slide"><img src="/project/img/portada1970.jpg" alt="Mundial 1970"></div>
+        <div class="slide"><img src="/project/img/portada1990.jpg" alt="Mundial 1990"></div>
+        <div class="slide"><img src="/project/img/portada2018.jpg" alt="Mundial 2018"></div>
+      </div>
+    </div>
+
+    <!-- Botones de Navegación del Slider -->
+    <div class="navigation">
+      <button class="nav-btn" onclick="moveSlide(-1)">Anterior</button>
+      <button class="nav-btn" onclick="moveSlide(1)">Siguiente</button>
+    </div>
+  </section>
+
+  <!-- Sección de Galería de Portadas -->
+  <section id="galeria">
+    <h2>Galería de Portadas de los Mundiales</h2>
+
+    <div class="gallery">
+      <img src="/project/img/portada1930.jpg" alt="Mundial 1930">
+      <img src="/project/img/portada1934.jpg" alt="Mundial 1934">
+      <img src="/project/img/portada1938.jpg" alt="Mundial 1938">
+      <img src="/project/img/portada1950.jpg" alt="Mundial 1950">
+      <img src="/project/img/portada1954.jpg" alt="Mundial 1954">
+      <img src="/project/img/portada1958.jpg" alt="Mundial 1958">
+      <img src="/project/img/portada1962.jpg" alt="Mundial 1962">
+      <img src="/project/img/portada1966.jpg" alt="Mundial 1966">
+      <img src="/project/img/portada1970.jpg" alt="Mundial 1970">
+      <img src="/project/img/portada1974.jpg" alt="Mundial 1974">
+      <img src="/project/img/portada1978.jpg" alt="Mundial 1978">
+      <img src="/project/img/portada1982.jpg" alt="Mundial 1982">
+      <img src="/project/img/portada1986.jpg" alt="Mundial 1986">
+      <img src="/project/img/portada1990.jpg" alt="Mundial 1990">
+      <img src="/project/img/portada1994.jpg" alt="Mundial 1994">
+      <img src="/project/img/portada1998.jpg" alt="Mundial 1998">
+      <img src="/project/img/portada2002.jpg" alt="Mundial 2002">
+      <img src="/project/img/portada2006.jpg" alt="Mundial 2006">
+      <img src="/project/img/portada2010.jpg" alt="Mundial 2010">
+      <img src="/project/img/portada2014.jpg" alt="Mundial 2014">
+      <img src="/project/img/portada2018.jpg" alt="Mundial 2018">
+      <img src="/project/img/portada2022.jpg" alt="Mundial 2022">
+    </div>
+  </section>
+
+  <!-- Sección Otros -->
+  <section id="otros">
+    <h2>Otros</h2>
+    <p>En esta sección puedes agregar más contenido o información relevante relacionada con los mundiales.</p>
+  </section>
+
+  <script>
+    // Slider Script
+    let currentSlide = 0;
+
+    function moveSlide(direction) {
+      const slider = document.querySelector('.slides');
+      const totalSlides = slider.children.length;
+
+      currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+      slider.style.transform = `translateX(-${currentSlide * 100 / totalSlides}%)`;
+    }
+
+    // Auto Slide cada 5 segundos
+    setInterval(() => {
+      moveSlide(1);
+    }, 5000);
+  </script>
+
+</body>
+</html>

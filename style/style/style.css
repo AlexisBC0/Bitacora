@@ -1,0 +1,90 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+h1, h2 {
+  color: #333;
+}
+
+.cuadro_de_ejemplo {
+  background-color: #e0e0e0;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+#demo, #demo2, #styleDemo, #domExample, #ifElseDemo, #viewportExample, #jsRefExample {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.highlight {
+  background-color: yellow;
+}
+
+@media (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+
+  .example {
+    background-color: lightyellow;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1200px) {
+  body {
+    background-color: lightgreen;
+  }
+}
+
+@media (min-width: 1201px) {
+  body {
+    background-color: lightcoral;
+  }
+} 
+
+#ejemplo_de_flexbox{
+  display: flex;
+  background-color: yellow;
+  width: auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  height: 300px;
+  align-items: stretch;
+}
+
+.flex_item{
+  width: 300px;
+  background-color: pink;
+  
+}
+
+#item1{
+  background-color: aqua;
+  flex-grow: 0;
+  flex-shrink: 2;
+}
+
+#item2{
+  background-color: rgb(68, 255, 0);
+  order: -1;
+  flex-grow: 3;
+  flex-shrink: 2;
+}
+
+#item3{
+  background-color: rgb(36, 199, 63);
+  flex-grow: 2;
+  flex-shrink: 3;
+}
+
+#item4{
+  background-color: rgb(28, 77, 181);
+  flex-grow: 1;
+  flex-shrink: 2;
+}

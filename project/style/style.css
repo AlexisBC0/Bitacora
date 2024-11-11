@@ -1,0 +1,83 @@
+/* Estilos Generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+
+  h1 {
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .slider {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .slides {
+    display: flex;
+    width: 500%;
+    transition: transform 0.5s ease;
+  }
+
+  .slide {
+    width: 20%;
+    box-sizing: border-box;
+  }
+
+  .slide img {
+    width: 100%;
+    display: block;
+  }
+
+  .navigation {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .nav-btn {
+    border: none;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    margin: 0 5px;
+  }
+
+  /* Galería de portadas */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 20px auto;
+  }
+
+  .gallery img {
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+
+  .gallery img:hover {
+    transform: scale(1.1);
+  }
+
+  /* Responsivo */
+  @media (max-width: 600px) {
+    .slider {
+      width: 100%;
+    }
+
+    .nav-btn {
+      padding: 5px;
+    }
+  }
