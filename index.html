@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <title>UNIDAD I</title>
+</head>
+<body>
+  <h1>UNIDAD I </h1>
+  <h2><b>Conceptos Basicos JS, DOM, Viewport, Media Queries</b></h2>
+
+  <!-- Variables en JavaScript: var, let y const -->
+  <div class="cuadro_de_ejemplo">
+    <h2>1. Conceptos básicos de JavaScript</h2>
+    <p>Existen tres tipos de variables, haz clic en el botón para mostrar los valores de las variables `var`, `let` y `const`:</p>
+    <button onclick="mostrarVariables()">Mostrar Variables</button>
+    <div id="demo"></div>
+
+    <script>
+      function mostrarVariables() {
+        var nombre = "Juan"; // Variable global (var)
+        let edad = 30;       // Variable de bloque (let)
+        const pi = 3.14;     // Constante (const)
+
+        document.getElementById("demo").innerHTML = `
+          <p>Nombre (var): ${nombre} -Tiene un alcance o función global y es reasignable</p>
+          <p>Edad (let): ${edad} -Tiene un alcance de bloque y es reasignable</p>
+          <p>PI (const): ${pi} -Tiene alcance de bloque y no es reasignable</p>
+        `;
+      }
+    </script>
+
+    <p>Haz clic en el botón para mostrar las funciones:</p>
+    <button onclick="mostrarFunciones()">Mostrar Funciones</button>
+    <div id="demo2"></div>
+
+    <script>
+      function mostrarFunciones(){
+        alert("Hola esta es una alerta a base de una función")
+        document.getElementById("demo2").innerHTML='Los clicks que haz dado son eventos en JS'
+      }
+    </script>
+    
+  </div>
+
+  <!-- DOM: Acceder y Manipular Elementos -->
+  <div class="cuadro_de_ejemplo">
+    <h2>2. DOM (Document Object Model)</h2>
+    <p>El DOM representa la estructura de un documento HTML que JavaScript puede manipular para modificar dinámicamente el contenido, estructura y el estilo de la página. </p>
+
+    <p>Principales Metodos del DOM</p>
+    <p><b>1. Seleccionar elementos:</b></p>
+    <p><b>getElementById():</b> Selecciona un elemento por su atributo <b>id.</b></p>
+    <p><b>getEelementByClassName():</b> Selecciona todos los elementos que tienen un clase especifica. Retorna una coleccion de elementos.</p>
+    <p><b>getElementByTagName():</b> Selecciona todos los elemenots por su nombre de etiqueta (como p, div, etc).</p>
+    <p><b>querySelector(): </b> Selecciona el primer elemento que coincide con un selector CSS.</p>
+
+    <p><b>2. Modificar elementos del DOM:</b></p>
+    <p><b>innerHTML: </b>Modifica o establece el contenido HTML dentro de un elemento.</p>
+    <p><b>textContent:</b>Modifica o establece el contenido de texto puro de un elemento, sin interpretar el HTML.</p>
+    <p><b>setAttribute(): </b>Modifica o establece un atributo de un elemento.</p>
+    <p><b>classList.add(), classList.remove(), classList.toggle(): </b>Manipula las clases CSS de un elemento.</p>
+    <p><b>style</b> Modifica el estilo CSS en linea de un elemento.</p>
+
+    <p><b>3. Crear y eliminar nodos.</b></p>
+    <p><b>createElement():</b> Crea un elemento HTML.</p>
+    <p><b>createTextNode():</b> Crea un nodo de texto.</p>
+    <p><b>appendChild(): </b>Agrega un nuevo nodo como hijo de un elemento.</p>
+    <p><b>removeChild(): </b>Elimina un nodo hijo de un elemento.</p>
+
+    <p><b>4. Eventos en el DOM.</b></p>
+    <p><b>addEventListener():</b> Se usa para registrar un evento en un elemento.</p>
+    <p>Alguno de los eventos mas comunes son: <b>click</b>, <b>mouseover</b>, <b>keyup</b>, <b>load</b>. </p>
+
+    <p>Haz clic para cambiar el contenido del cuadro:</p>
+    <button onclick="manipularDOM()">Manipular DOM</button>
+    <div id="domExample">Este es un ejemplo de manipulación del DOM.</div>
+
+    <script>
+      function manipularDOM() {
+        let element = document.getElementById("domExample");
+        element.innerHTML = "¡El contenido ha cambiado!";
+        element.style.backgroundColor = "lightgreen";
+      }
+    </script>
+    
+  </div>
+
+  <!-- Referenciar con JavaScript -->
+  <div class="cuadro_de_ejemplo">
+    <h2>3. Referenciar con JavaScript</h2>
+    <p>Para referenciar elementos en el DOM con JavaScript, se utilizan métodos como `getElementById`, `querySelector`, entre otros. Haz clic para ver un ejemplo con `querySelector`:</p>
+    <button onclick="referenciarJS()">Referenciar con JS</button>
+    <div id="jsRefExample">Haz clic en el botón para cambiar este texto.</div>
+
+    <script>
+      function referenciarJS() {
+        let elemento = document.querySelector("#jsRefExample");
+        elemento.innerHTML = "Has referenciado correctamente este elemento con `querySelector`.";
+        elemento.style.color = "blue";
+      }
+    </script>
+  </div>
+
+  <!-- Eventos en JavaScript -->
+  <div class="cuadro_de_ejemplo">
+    <h2>4. Eventos en JavaScript</h2>
+    <p>Los eventos en JavaScript permiten interactuar con la página web. Haz clic en el cuadro de abajo para cambiar su color:</p>
+    <div id="eventExample" onclick="cambiarColor()" style="width: 100px; height: 100px; background-color: lightgray;"></div>
+
+    <script>
+      function cambiarColor() {
+        document.getElementById("eventExample").style.backgroundColor = "lightblue";
+      }
+    </script>
+  </div>
+
+  <!-- Propiedad style y classList -->
+  <div class="cuadro_de_ejemplo">
+    <h2>5. Propiedad `style` y `classList`</h2>
+    <p>La propiedad `style` permite cambiar los estilos en línea de un elemento. Haz clic en el botón para cambiar el estilo del texto:</p>
+    <button onclick="cambiarEstilo()">Cambiar Estilo</button>
+    <p id="styleDemo">Este texto cambiará de estilo cuando hagas clic en el botón.</p>
+
+    <script>
+      function cambiarEstilo() {
+        let element = document.getElementById("styleDemo");
+        element.style.fontSize = "20px";
+        element.style.color = "red";
+        element.classList.add("highlight");
+      }
+    </script>
+  </div>
+
+  <!-- if/else en JavaScript -->
+  <div class="cuadro_de_ejemplo">
+    <h2>6. Condicionales: if/else</h2>
+    <p>Las condicionales permiten tomar decisiones en el código. Haz clic para verificar si un número es mayor, menor o igual a 10:</p>
+    <button onclick="verificarNumero()">Verificar Número</button>
+    <div id="ifElseDemo"></div>
+
+    <script>
+      function verificarNumero() {
+        let numero = prompt("Introduce un número:");
+
+        if (numero > 10) {
+          document.getElementById("ifElseDemo").innerHTML = `${numero} es mayor que 10.`;
+        } else if (numero < 10) {
+          document.getElementById("ifElseDemo").innerHTML = `${numero} es menor que 10.`;
+        } else {
+          document.getElementById("ifElseDemo").innerHTML = `${numero} es igual a 10.`;
+        }
+      }
+    </script>
+  </div>
+
+  <!-- Viewport -->
+  <div class="cuadro_de_ejemplo">
+    <h2>7. Viewport</h2>
+    <p>El viewport es el área visible de la página web. La meta etiqueta viewport se utiliza para controlar el comportamiento de la página en dispositivos móviles. Este archivo ya incluye la meta etiqueta viewport:</p>
+    <pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></pre>
+    <p>Esta configuración asegura que el ancho de la página sea igual al ancho del dispositivo y que el zoom inicial sea del 100%.</p>
+    <p>Para controlar el comportamiento del viewport en dispositivos móviles, se usa una etiqueta especial en el head del documento HTML llamada meta name="viewport". Esta etiqueta permite ajustar el tamaño y la escala del viewport.</p>
+    <p><b>Propiedades del Meta Viewport</b></p>
+    <p><b>width:</b> Controla el ancho del viewport. width=device-width: Establece el ancho del viewport al ancho del dispositivo.</p> 
+    <p><b>height: </b> Controla la altura del viewport. height=device-height: Establece la altura del viewport al alto del dispositivo.</p>
+    <p><b>initial-scale: </b> Define el nivel de zoom inicial de la página. initial-scale=1.0: No hay zoom inicial.</p>
+    <p><b>minimum-scale: </b> Establece el nivel mínimo de zoom que se permite. minimum-scale=1.0: El usuario no puede hacer zoom menos de 100%.</p>
+    <p><b>maximum-scale: </b> Establece el nivel máximo de zoom que se permite. maximum-scale=2.0: El usuario puede hacer zoom hasta el 200%.</p>
+    <p><b>user-scalable: </b> Permite o desactiva el zoom por parte del usuario. user-scalable=yes: Permite el zoom. user-scalable=no: Desactiva el zoom.</p>
+
+  </div>
+
+  <!-- Media Queries -->
+  <div class="cuadro_de_ejemplo">
+    <h2>8. Media Queries</h2>
+    <p>Las media queries se usan junto con el meta viewport para crear diseños adaptativos que responden a diferentes tamaños de pantalla y dispositivos.</p>
+    <p><b>Propiedades en Media Queries</b></p>
+    <p><b>width y height: </b>
+    <uo>
+      <li>min-width: Aplica los estilos si el ancho del viewport es mayor o igual a un valor específico.</li>
+      <li>max-width: Aplica los estilos si el ancho del viewport es menor o igual a un valor específico.</li>
+      <li>min-height: Aplica los estilos si la altura del viewport es mayor o igual a un valor específico.</li>
+      <li>mmax-height: Aplica los estilos si la altura del viewport es menor o igual a un valor específico.</li>
+    </uo></p>
+
+    <p><b>orientation: </b>
+      <uo>
+        <li>portrait: Aplica los estilos si el dispositivo está en orientación vertical.</li>
+        <li>landscape: Aplica los estilos si el dispositivo está en orientación horizontal.</li>
+      </uo></p>
+
+
+    <p><b>resolution: </b>
+      <uo>
+        <li>min-resolution: Aplica los estilos si la resolución es mayor o igual a un valor específico.</li>
+        <li>max-resolution: Aplica los estilos si la resolución es menor o igual a un valor específico.</li>
+      </uo></p>
+
+    <p><b>aspect-radio: </b>
+      <uo>
+        <li>min-aspect-ratio: Aplica los estilos si la relación de aspecto es mayor o igual a un valor específico.</li>
+        <li>max-aspect-ratio: Aplica los estilos si la relación de aspecto es menor o igual a un valor específico.</li>
+      </uo></p>      
+    
+
+    <p><b>Ejemplo: </b>Si el ancho de la pantalla es menor a 600px, el fondo será azul. Si está entre 601px y 1200px, será verde, y si es mayor a 1200px, será coral.</p>
+  </div>
+
+</body>
+</html>

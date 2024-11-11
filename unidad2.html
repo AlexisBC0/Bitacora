@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/style.css">
+    <title>UNIDAD II</title>
+
+</head>
+<body>
+    <h1>UNIDAD II</h1>
+    <h2>Temario</h2>
+
+    <!--FLEXBOX-->
+    <div class="cuadro_de_ejemplo">
+    <h2>Flexbox</h2>
+
+    <p>El módulo Flexbox es candidato a recomendación del W3C apartir de Octubre 2017.</p>
+    <p>Tiene como objetivo proporcionar u   na manera más eficiente de diseñar, alinear y distribuir el espacio entre los elementos en un contenedor.</p>
+    <p>La idea principal es dar al contenedor la capacidad de modificar el ancho, alto y el orden de sus elementos para llenar mejor el espacio disponible.</p>
+    <p>Necesitamos un contenedor flexible para poder tener items flexibles.</p>
+
+    <b>Propiedades para el elemento contenedor</b>
+
+    <p><b>Flex</b></p>
+    <p>Contenido</p>
+    <p>Flex direction Establece el eje principal</p>
+    <p><b>Flew-wrap</b> Por defecto todos los elementos intentan encajar en una sola linea, con esta propiedad podremos ajustarlo.</p>
+    <ul>
+        <li><p>wrap: </p></li>
+    </ul>
+    <p><b>Justify-content</b> Esto define la alineación a lo largo del eje principal.</p>
+    <ul>
+        <li><p>flex-start(predeterminado): Los items se alinean hacia la línea de inicio.</p></li>
+        <li><p>flex-end: Los items se alinean hacia la línea del final.</p></li>
+        <li><p>center: Los items estan centrados a lo largo de la linea.</p></li>
+        <li><p>space-between: Los items se distribuyen uniformenente, inicio, centro, final.</p></li>
+        <li><p>space-around: Los items se distribuyen uniformenente en linea con el mismo espacio a su alrededor./p></li>
+        <li><p>space-evenly: Los items se distribuyen de manera que el espacio entre dos elementos y el espacio en los bordes sea el mismo.</p></li>
+    </ul>
+
+        <p><b>aling-items</b> Esto define la alineación a lo largo del eje vertical.</p>
+        <ul>
+            <li><p>stretch(predeterminado): Estira para llenar el contenedor.</p></li>
+            <li><p>flex-start: Los elementos se colocan en la linea de inicio.</p></li>
+            <li><p>flex-end Los elementos se colocan en la linea final.</p></li>
+            <li><p>center: Los elementos se centran en el eje transversal.</p></li>
+            <li><p>baseline: Los elementos están alineados como la alineación de su linea base.</p></li>
+        </ul>
+
+        <p><b>aling-content</b> Esta propiedad alinea los renglones de un contenedor flexible cuando hay espacio extra en el eje transversal.</p>
+        <ul>
+            <li><p>stretch(predeterminado): Estira las lineas para ocupar el espacio restante.</p></li>
+            <li><p>flex-start: Alineado al inicio del contenedor.</p></li>
+            <li><p>flex-end: Alineado hasta el final del contenedor.</p></li>
+            <li><p>center: Alineado en el centro del contenedor.</p></li>
+            <li><p>space-between: Líneas uniformenente distribuidas, al inicio y al final.</p></li>
+            <li><p>space-around: Líneas uniformenente distribuidas con el mismo espacio alrededor de cada línea.</p></li>
+        </ul>
+
+        <div id="ejemplo_de_flexbox">
+            <div class="flex_item" id="item1">Item1</div>
+            <div class="flex_item" id="item2">Item2</div>
+            <div class="flex_item" id="item3">Item3</div>
+            <div class="flex_item" id="item4">Item4</div>
+        </div>
+
+        <p><b>Propiedades para los hijos</b></p>
+
+        <p><b>Order: </b>Por default los elementos se muestran en el orden de origen, controla el orden en el que aparecen los elementos. (Por default todos los elementos tienen 0).</p>
+
+        <p><b>flex-grow:</b> Define la capacidad para que un item crezca si es necesario, solo acepta valores enteros e indica que cantidad de espacio disponible dentro del contenedor 
+            flexible debe ocupar el item.</p>
+        <p>El núnero indica cuantas unidades de crecimiento crecerá el ítem. (= espacio disponible / suma de flex-grow) <b>EXAMEN </b></p>
+
+        <p><b>flex-shrink:</b> Especifica la capacidad de un elemento para reducirse en relación con el resto de los elementos flexibles del contenedor.</p>
+        <p>El número indica cuantas unidades de reducción reducirá el ítem. (= espacio faltante / suma de flex-shrink)</p>
+
+        <p><b>flex-basis:</b> Define el tamaño predeterminado de un elemento antes de distrbuir el espacio </p>
+
+        <p><b>aling-self: </b> Definición </p>
+
+    
+    </div>
+
+    
+    <div class="cuadro_de_ejemplo" id="img">
+        <p><b>Width</b> Cuando se le asigna un valor y el alto es automatico.<br>
+        <img src="/img/codbo6.jpeg">
+
+        <p><b>Max-width</b> Si utilizamos esta propiedad al 100% se podrá reducir pero no ampliar su tamaño original.</p>
+        <img src="/img/gtavi.jpg" id="gtavi">
+
+        <p><b>Imagenes de fondo</b> Las imagenes de fondo tambien puede cambiar de tamaño.</p>
+
+        <p><b>Background-size</b></p>
+        
+        <p><b>Background-position</b> Hola</p>
+
+        <div id="epicture">
+            <p><b>picture</b> Funciona de manera similar de los elemento audio y video, se puden utilizar dinstintas fuentes, y la primera fuente que se ajusta es la que se está usando </p>
+            <picture>
+                <source srcset="/img/codbo6.jpeg" media="(Max-width: 480px)">
+                <source srcset="tal" media="(Max-width: 720px)">
+                <img src="/img/codbo6.jpeg" style="width: 100%;">
+            </picture>
+        </div>
+
+        <p><b>Origen SVG</b> wDefierentes tipos de graficos vectoriales para la web, como resultado se creó el SVG WG quien decidió desarrollar un nuevo lenguaje. SVG es un lenguaje de marcado para describir
+            imagenes y aplicaciones de gráficos bidimensiones, se convierte en recomendado por W3C en septiembre de 2001, la versión mas reciente es la 1.1 (la 2 esta en desarrollo), ventajas: formato libre de derechos de autor.
+            Se puede utilizar Javascript y elementos SVG para crear interacciones, es compatible para la mayoria de dispositivos y tiene soporte para la mayoria de los navegadores.</p>
+
+            <img src="/img/Asset 1.svg">
+
+
+    </div>
+
+</body>
+</html>
