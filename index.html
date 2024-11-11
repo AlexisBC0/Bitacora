@@ -13,75 +13,74 @@
     <style>
 
         body {
-                padding-top: 50px; /* Ajusta según la altura de la barra */
-            }
-        /* Espaciado constante entre los cuadros y los bordes de la pantalla */
+          padding-top: 50px; 
+        }
+       
         .container {
-            padding: 0 10px; /* Espacio de 10px en los lados */
-            width: 100%;
-            margin: 0 auto; /* Centrar el contenedor */
+          padding: 0 10px; 
+          width: 100%;
+          margin: 0 auto; 
         }
 
-        /* Personalización de los cuadros con borde */
         .cuadro {
-            border: 2px solid black;
-            padding: 20px;
-            margin-bottom: 20px;
+          border: 2px solid black;
+          padding: 20px;
+          margin-bottom: 20px;
         }
 
-        /* Aseguramos que el body se comporte como un contenedor flexible para el footer */
+        
         body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh; /* Hace que el contenido ocupe al menos el 100% de la altura */
+          display: flex;
+          flex-direction: column;
+          min-height: 100vh; 
         }
 
-        /* El footer se asegura de estar al final del contenido, sin estar fijo */
+        
         footer {
-            background-color: #00d1b2; /* Color de la barra de navegación */
-            height: 50px;
-            width: 100%;
-            position: relative;
-            margin-top: auto; /* Empuja el footer hacia el final del contenido */
+          background-color: #00d1b2; 
+          height: 50px;
+          width: 100%;
+          position: relative;
+          margin-top: auto; 
         }
 
         nav.navbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 1000;
-    }
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          z-index: 1000;
+       }
 
         /* Estilos del menú hamburguesa */
         .navbar-burger {
-            display: none;
+          display: none;
         }
 
         @media screen and (max-width: 1022px) {
-            .navbar-menu {
-                display: none;
-            }
+          .navbar-menu {
+             display: none;
+          }
 
-            .navbar-burger {
-                display: block;
-            }
+          .navbar-burger {
+            display: block;
+          }
         }
 
         .example-box {
-            margin: 20px;
-            padding: 20px;
-            background-color: #f4f4f4;
-            text-align: center;
+          margin: 20px;
+          padding: 20px;
+          background-color: #f4f4f4;
+          text-align: center;
         }
 
         .example-box p {
-            font-size: 16px;
+          font-size: 16px;
         }
 
         @media screen and (min-width: 1408px) {
         .container:not(.is-max-desktop):not(.is-max-widescreen) {
-            max-width: 1800px; /* Puedes ajustar este valor */
+          max-width: 1800px; 
             
         }
     }
@@ -171,18 +170,14 @@
         </div>
     </nav>
 
-    <!-- Secciones de contenido -->
     <div class="container">
         
-        <!-- Sección 1 -->
+        <!-- Tema 1 -->
         <div id="seccion1" class="cuadro" style="margin-top: 20px;">
             <h2 class="title is-4">Frameworks</h2>
             <div>
                 <h3>¿Qué es un framework en desarrollo web?</h3>
-                <p>
-                  Un <strong>framework</strong> es un conjunto de herramientas y bibliotecas que ayudan a los desarrolladores a crear aplicaciones web de manera más rápida y organizada. Un framework proporciona una estructura básica sobre la cual se construyen aplicaciones, lo que permite evitar escribir código repetitivo y enfocarse en la funcionalidad específica de la aplicación.
-                </p>
-                
+                <p> Un <strong>framework</strong> es un conjunto de herramientas y bibliotecas que ayudan a los desarrolladores a crear aplicaciones web de manera más rápida y organizada. Un framework proporciona una estructura básica sobre la cual se construyen aplicaciones, lo que permite evitar escribir código repetitivo y enfocarse en la funcionalidad específica de la aplicación.</p>
                 <h4>¿Por qué usar un framework?</h4>
                 <ul>
                   <li><strong>Ahorro de tiempo:</strong> Los frameworks vienen con componentes y funciones predefinidas, lo que acelera el desarrollo.</li>
@@ -208,18 +203,18 @@
                     </ul>
                   </li>
                 </ul>
-                
-                <p>
-                  En resumen, los frameworks simplifican el proceso de desarrollo, permiten crear aplicaciones robustas y escalables, y son ampliamente utilizados en el desarrollo web moderno.
-                </p>
+              
+                <p>En resumen, los frameworks simplifican el proceso de desarrollo, permiten crear aplicaciones robustas y escalables, y son ampliamente utilizados en el desarrollo web moderno. </p>
+                <br>
+                <p><strong>ESTA PÁGINA ESTA USANDO EL FRAMEWORK DE BULMA.</strong></p>
               </div>
                 
         </div>
 
-        <!-- Sección 2 -->
+        <!-- Tema 2 -->
         <div id="seccion2" class="cuadro">
             <h2 class="title is-4">Unidades responsivas</h2>
-            <p>Aquí puedes agregar el contenido de la Sección 2.</p><br>
+            <p>Aquí puedes agregar el contenido de la Tema 2.</p><br>
             <h2 class="title is-4">Unidades en CSS</h2>
                 <p>Existen diferentes tipos de unidades en CSS, que se dividen principalmente en:</p>
                 <ul>
@@ -250,10 +245,10 @@
     
         </div>
 
-        <!-- Sección 3 -->
+        <!-- Tema 3 -->
         <div id="seccion3" class="cuadro">
             <h2 class="title is-4">Mobile first</h2>
-            <p>Aquí puedes agregar el contenido de la Sección 3.</p>
+            <p>Aquí puedes agregar el contenido de la Tema 3.</p>
             <div>
                 <h3>¿Qué es el enfoque "Mobile First" en diseño web?</h3>
                 <p>
@@ -304,7 +299,7 @@
               </div>
         </div>
 
-        <!-- Sección 4 -->
+        <!-- Tema 4 -->
         <div id="seccion4" class="cuadro">
             <h2 class="title is-4">Módulo grid</h2>
             <p>El <strong>CSS Grid</strong> es una herramienta que nos ayuda a organizar el contenido de una página en filas y columnas. Imagina que quieres dividir un espacio en varias partes de igual tamaño o diferente tamaño, Grid te lo permite hacer de manera fácil. Usando Grid, puedes organizar los elementos de manera ordenada y flexible, sin necesidad de usar posiciones o márgenes complicados.</p>
@@ -327,10 +322,10 @@
           
         </div>
 
-        <!-- Sección 5 -->
+        <!-- Tema 5 -->
         <div id="seccion5" class="cuadro">
             <h2 class="title is-4">@supports</h2>
-            <p>Aquí puedes agregar el contenido de la Sección 5.</p><br>
+            <p>Aquí puedes agregar el contenido de la Tema 5.</p><br>
             <ul>
                 <li><strong>Objetivo</strong>: Detectar la compatibilidad de características CSS en diferentes navegadores y apliquen estilos condicionales basados en esa compatibilidad para asegurar una experiencia de usuario consistente. </li>
                 <li><strong>Mejora progresiva</strong>: Es una estrategia de diseño web que consisten en crear una versión básica de la funcionalidad par todos los navegadores, y luego agregar características mejoradas para navegadores que la soporten. </li>
@@ -339,7 +334,7 @@
             </ul><br>
         </div>
 
-        <!-- Sección 6 -->
+        <!-- Tema 6 -->
         <div id="seccion6" class="cuadro">
             <h2 class="title is-4">calc</h2>
             <p>La función <code>calc()</code> permite realizar cálculos en CSS para definir valores de propiedades como <strong>ancho</strong>, <strong>márgenes</strong>, <strong>padding</strong>, entre otras.Esto es útil cuando necesitamos ajustar el tamaño de un elemento de manera dinámica combinando diferentes unidades, como porcentajes y píxeles.</p>
@@ -374,7 +369,7 @@
 
     <!-- Footer -->
     <footer>
-        <!-- Puede ser solo una barra sin contenido, como mencionaste -->
+        
     </footer>
 
 </body>
