@@ -4,18 +4,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Sitio Web</title>
-    
+    <title>BITACORA UIII</title>
+
     <!-- Conexión con Bulma -->
     <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" rel="stylesheet">
 
+    <!-- Esilo aqui mismo para que tenga mas peso que Bulma-->
     <style>
-        /* Personalización del borde de los cuadros */
+
+        body {
+                padding-top: 50px; /* Ajusta según la altura de la barra */
+            }
+        /* Espaciado constante entre los cuadros y los bordes de la pantalla */
+        .container {
+            padding: 0 10px; /* Espacio de 10px en los lados */
+            width: 100%;
+            margin: 0 auto; /* Centrar el contenedor */
+        }
+
+        /* Personalización de los cuadros con borde */
         .cuadro {
             border: 2px solid black;
             padding: 20px;
             margin-bottom: 20px;
         }
+
+        /* Aseguramos que el body se comporte como un contenedor flexible para el footer */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Hace que el contenido ocupe al menos el 100% de la altura */
+        }
+
+        /* El footer se asegura de estar al final del contenido, sin estar fijo */
+        footer {
+            background-color: #00d1b2; /* Color de la barra de navegación */
+            height: 50px;
+            width: 100%;
+            position: relative;
+            margin-top: auto; /* Empuja el footer hacia el final del contenido */
+        }
+
+        nav.navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+        /* Estilos del menú hamburguesa */
+        .navbar-burger {
+            display: none;
+        }
+
+        @media screen and (max-width: 1022px) {
+            .navbar-menu {
+                display: none;
+            }
+
+            .navbar-burger {
+                display: block;
+            }
+        }
+
+        .example-box {
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        .example-box p {
+            font-size: 16px;
+        }
+
+        @media screen and (min-width: 1408px) {
+        .container:not(.is-max-desktop):not(.is-max-widescreen) {
+            max-width: 1800px; /* Puedes ajustar este valor */
+            
+        }
+    }
+
+        .practicamg {
+          display: grid;
+          grid-template-rows: 1fr 0.5fr 4fr 1fr;
+          grid-template-columns: 3fr 1fr;
+          gap: 10px;
+        }
+        
+        .header {
+            grid-column: 1 / -1;
+            background-color: pink;
+        }
+        
+        .nav {
+            grid-column: 1 / -1;
+            background-color: rgb(125, 33, 48);
+        }
+        
+        .main {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            grid-template-rows: 2fr 2fr;
+            gap: 10px;
+            grid-column: 1 / -1;
+          
+        }
+        
+        .banner {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+            background-color: pink;
+        }
+        
+        .cards {
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+          
+        }
+
+        .card{
+          background-color: #23d160;
+        }
+        
+        .aside {
+            grid-column: 2 / 3;
+            grid-row: 1 / 3;
+            background-color: rgb(187, 116, 128);
+        }
+        
+        .footer {
+            grid-column: 1 / -1;
+            background-color: rgb(216, 22, 54);
+        }
+
     </style>
 </head>
 
@@ -25,17 +148,25 @@
     <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a class="navbar-item" href="#">
-                <strong>Mi Sitio</strong>
+                <strong>BITACORA III</strong>
             </a>
+
+            <!-- Menú hamburguesa para dispositivos móviles -->
+            <span role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </span>
         </div>
 
         <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-start">
-                <a href="#seccion1" class="navbar-item">Sección 1</a>
-                <a href="#seccion2" class="navbar-item">Sección 2</a>
-                <a href="#seccion3" class="navbar-item">Sección 3</a>
-                <a href="#seccion4" class="navbar-item">Sección 4</a>
-                <a href="#seccion5" class="navbar-item">Sección 5</a>
+                <a href="#seccion1" class="navbar-item">Frameworks</a>
+                <a href="#seccion2" class="navbar-item">Unidades responsivas</a>
+                <a href="#seccion3" class="navbar-item">Mobile first</a>
+                <a href="#seccion4" class="navbar-item">Módulo grid</a>
+                <a href="#seccion5" class="navbar-item">@supports</a>
+                <a href="#seccion6" class="navbar-item">calc</a>
             </div>
         </div>
     </nav>
@@ -44,37 +175,210 @@
     <div class="container">
         
         <!-- Sección 1 -->
-        <div id="seccion1" class="cuadro">
-            <h2 class="title is-4">Título de la Sección 1</h2>
-            <p>Aquí puedes agregar el contenido de la Sección 1.</p>
+        <div id="seccion1" class="cuadro" style="margin-top: 20px;">
+            <h2 class="title is-4">Frameworks</h2>
+            <div>
+                <h3>¿Qué es un framework en desarrollo web?</h3>
+                <p>
+                  Un <strong>framework</strong> es un conjunto de herramientas y bibliotecas que ayudan a los desarrolladores a crear aplicaciones web de manera más rápida y organizada. Un framework proporciona una estructura básica sobre la cual se construyen aplicaciones, lo que permite evitar escribir código repetitivo y enfocarse en la funcionalidad específica de la aplicación.
+                </p>
+                
+                <h4>¿Por qué usar un framework?</h4>
+                <ul>
+                  <li><strong>Ahorro de tiempo:</strong> Los frameworks vienen con componentes y funciones predefinidas, lo que acelera el desarrollo.</li>
+                  <li><strong>Mantenimiento y organización:</strong> Proporcionan una estructura clara y organizada para el código, lo que facilita el mantenimiento.</li>
+                  <li><strong>Mejores prácticas:</strong> Los frameworks están diseñados siguiendo buenas prácticas de desarrollo, lo que mejora la calidad del código.</li>
+                  <li><strong>Comunidad y soporte:</strong> Los frameworks populares cuentan con grandes comunidades y documentación que ayudan a resolver problemas rápidamente.</li>
+                </ul>
+              
+                <h4>Ejemplos de frameworks populares:</h4>
+                <ul>
+                  <li><strong>Frontend:</strong> Frameworks para el diseño de la interfaz de usuario.
+                    <ul>
+                      <li><strong>Bootstrap:</strong> Framework de CSS que facilita la creación de sitios responsivos y estéticos.</li>
+                      <li><strong>Tailwind CSS:</strong> Framework CSS utilitario que permite crear interfaces personalizadas usando clases predefinidas.</li>
+                      <li><strong>React:</strong> Biblioteca de JavaScript para construir interfaces de usuario, especialmente para aplicaciones de una sola página (SPA).</li>
+                    </ul>
+                  </li>
+                  <li><strong>Backend:</strong> Frameworks para el desarrollo del lado del servidor.
+                    <ul>
+                      <li><strong>Express:</strong> Framework para aplicaciones de servidor en Node.js, ideal para crear API y servicios web.</li>
+                      <li><strong>Django:</strong> Framework de Python que facilita la creación de aplicaciones web seguras y escalables.</li>
+                      <li><strong>Ruby on Rails:</strong> Framework de Ruby que ayuda a construir aplicaciones web rápidamente siguiendo el patrón MVC (Modelo-Vista-Controlador).</li>
+                    </ul>
+                  </li>
+                </ul>
+                
+                <p>
+                  En resumen, los frameworks simplifican el proceso de desarrollo, permiten crear aplicaciones robustas y escalables, y son ampliamente utilizados en el desarrollo web moderno.
+                </p>
+              </div>
+                
         </div>
 
         <!-- Sección 2 -->
         <div id="seccion2" class="cuadro">
-            <h2 class="title is-4">Título de la Sección 2</h2>
-            <p>Aquí puedes agregar el contenido de la Sección 2.</p>
+            <h2 class="title is-4">Unidades responsivas</h2>
+            <p>Aquí puedes agregar el contenido de la Sección 2.</p><br>
+            <h2 class="title is-4">Unidades en CSS</h2>
+                <p>Existen diferentes tipos de unidades en CSS, que se dividen principalmente en:</p>
+                <ul>
+                    <li><strong>Unidades absolutas</strong>: Pixeles, centímetros, pulgadas. Representan tamaños fijos y no cambian independientemente del contexto en el que se utilicen.</li>
+                    <li><strong>Unidades relativas</strong>: Como %, em y rem, son flexibles y se adaptan en función de otros elementos.</li>
+                    <li><strong>Unidades de vista de ventana</strong>: Vw, vh, vmin, vmax. Estas unidades dependen del tamaño de la ventana del navegador, lo que hace que el diseño sea más fluido.</li>
+                    <li><strong>Unidades dinámicas</strong>: Dvh, svh, lvh. Estas unidades responden en tiempo real a cambios en la interfaz de usuario.</li>
+                </ul><br>
+            <!-- Ejemplo de Unidades en CSS -->
+                <h2 class="title is-4">Ejemplo de Unidades CSS</h2>
+                <p>Este ejemplo ilustra cómo cambiar el tamaño de un cuadro utilizando diferentes unidades de medida:</p>
+    
+                <div class="example-box" style="width: 50%; height: 30vh; background-color: #00d1b2;">
+                    <p style="color: white;">50% de ancho de la pantalla y 30vh de alto de la ventana.</p>
+                </div>
+    
+                <div class="example-box" style="width: 100vw; height: 20vw; background-color: #3273dc;">
+                    <p style="color: white;">100vw de ancho y 20vw de alto (1% del ancho y alto de la ventana).</p>
+                </div>
+    
+                <div class="example-box" style="width: 10rem; height: 10rem; background-color: #ff3860;">
+                    <p style="color: white;">10rem de ancho y 10rem de alto (relativo al tamaño de la fuente raíz).</p>
+                </div>
+    
+                <div class="example-box" style="width: 20vmin; height: 20vmin; background-color: #23d160;">
+                    <p style="color: white;">20vmin de ancho y 20vmin de alto (el menor valor entre el ancho o alto de la ventana).</p>
+                </div>
+    
         </div>
 
         <!-- Sección 3 -->
         <div id="seccion3" class="cuadro">
-            <h2 class="title is-4">Título de la Sección 3</h2>
+            <h2 class="title is-4">Mobile first</h2>
             <p>Aquí puedes agregar el contenido de la Sección 3.</p>
+            <div>
+                <h3>¿Qué es el enfoque "Mobile First" en diseño web?</h3>
+                <p>
+                  <strong>Mobile First</strong> es una metodología en diseño web que consiste en crear el diseño y la estructura de una página web pensando primero en los dispositivos móviles. La idea es construir la página para pantallas pequeñas inicialmente y luego agregar estilos adicionales para adaptarla a pantallas más grandes (tabletas, computadoras de escritorio) mediante media queries.
+                </p>
+                
+                <h4>Ejemplo de código:</h4>
+                <p>
+                  A continuación, mostramos un ejemplo básico de cómo se aplicaría el enfoque Mobile First utilizando CSS:
+                </p>
+                
+                <pre style="background-color: #e8e8e8;">
+              <code>
+              /* Estilos base (para dispositivos móviles) */
+              .contenedor {
+                background-color: #4CAF50;
+                color: white;
+                padding: 20px;
+                font-size: 16px;
+              }
+              
+              /* Estilos adicionales para pantallas más grandes */
+              @media (min-width: 768px) {
+                .contenedor {
+                  font-size: 18px; /* Aumenta el tamaño del texto */
+                  padding: 30px; /* Aumenta el espacio interno */
+                }
+              }
+              
+              @media (min-width: 1024px) {
+                .contenedor {
+                  font-size: 20px; /* Aumenta más el tamaño del texto */
+                  padding: 40px; /* Aumenta más el espacio interno */
+                  background-color: #3B9C4A; /* Cambia ligeramente el color de fondo */
+                }
+              }
+              </code>
+                </pre>
+                
+                <p>
+                  En este ejemplo:
+                  <ul>
+                    <li>Primero definimos los estilos básicos que se aplicarán a dispositivos móviles (sin usar media queries).</li>
+                    <li>Luego, agregamos media queries para pantallas de al menos 768px y 1024px de ancho, que aplican cambios específicos cuando el tamaño de la pantalla es mayor.</li>
+                  </ul>
+                  De esta forma, el diseño se adapta de forma progresiva para mejorar la experiencia de usuario en dispositivos más grandes.
+                </p>
+              </div>
         </div>
 
         <!-- Sección 4 -->
         <div id="seccion4" class="cuadro">
-            <h2 class="title is-4">Título de la Sección 4</h2>
-            <p>Aquí puedes agregar el contenido de la Sección 4.</p>
+            <h2 class="title is-4">Módulo grid</h2>
+            <p>El <strong>CSS Grid</strong> es una herramienta que nos ayuda a organizar el contenido de una página en filas y columnas. Imagina que quieres dividir un espacio en varias partes de igual tamaño o diferente tamaño, Grid te lo permite hacer de manera fácil. Usando Grid, puedes organizar los elementos de manera ordenada y flexible, sin necesidad de usar posiciones o márgenes complicados.</p>
+
+            <div class="practicamg">
+              <header class="header">Header</header>
+              <nav class="nav">Nav</nav>
+              <main class="main">
+                  <div class="banner">Banner</div>
+                  <div class="columns cards">
+                      <div class="column card">Card</div>
+                      <div class="column card">Card</div>
+                      <div class="column card">Card</div>
+                  </div>
+                  <aside class="aside">Aside</aside>
+              </main>
+              <footer class="footer">Footer</footer>
+          </div>
+          
+          
         </div>
 
         <!-- Sección 5 -->
         <div id="seccion5" class="cuadro">
-            <h2 class="title is-4">Título de la Sección 5</h2>
-            <p>Aquí puedes agregar el contenido de la Sección 5.</p>
+            <h2 class="title is-4">@supports</h2>
+            <p>Aquí puedes agregar el contenido de la Sección 5.</p><br>
+            <ul>
+                <li><strong>Objetivo</strong>: Detectar la compatibilidad de características CSS en diferentes navegadores y apliquen estilos condicionales basados en esa compatibilidad para asegurar una experiencia de usuario consistente. </li>
+                <li><strong>Mejora progresiva</strong>: Es una estrategia de diseño web que consisten en crear una versión básica de la funcionalidad par todos los navegadores, y luego agregar características mejoradas para navegadores que la soporten. </li>
+                <li>La regla permite detectar si el navegador soporta una característica CSS específica y aplicar estilos condicionales basados en esta compatibilidad. Es útil para implementar funcionalidades modernas, mientras se garantiza que los navegadores que no soportan estas características aun presenten un diseño funcional.  </li>
+                <li>Puede usar los operadores lógicos, and, or not, estas condiciones pueden combinarse. </li>
+            </ul><br>
         </div>
+
+        <!-- Sección 6 -->
+        <div id="seccion6" class="cuadro">
+            <h2 class="title is-4">calc</h2>
+            <p>La función <code>calc()</code> permite realizar cálculos en CSS para definir valores de propiedades como <strong>ancho</strong>, <strong>márgenes</strong>, <strong>padding</strong>, entre otras.Esto es útil cuando necesitamos ajustar el tamaño de un elemento de manera dinámica combinando diferentes unidades, como porcentajes y píxeles.</p>
+            <div style="width: calc(100% - 50px); padding: calc(10px + 2%);">
+                <p>Ejemplo de uso:</p>
+                <p>En este <code>div</code>, usamos <code>calc()</code> para definir el ancho y el padding:</p>
+                <ul>
+                  <li><strong>Ancho:</strong> <code>width: calc(100% - 50px);</code> <br>
+                    Esto hace que el <code>div</code> ocupe el 100% del ancho del contenedor, menos 50 píxeles, creando un margen a cada lado.</li>
+                  <li><strong>Padding:</strong> <code>padding: calc(10px + 2%);</code> <br>
+                    Combina 10 píxeles fijos con un 2% del ancho del contenedor, lo cual da un espacio interno adicional que cambia según el tamaño de la pantalla.</li>
+                </ul>
+                <p>Usar <code>calc()</code> es útil para crear diseños más flexibles y responsivos.</p>
+              </div>
+        </div>        
+        
 
     </div>
 
+    <!-- Script para hacer funcionar el menú de hamburguesa en móviles -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const burger = document.querySelector('.navbar-burger');
+            const menu = document.querySelector('.navbar-menu');
+            
+            burger.addEventListener('click', () => {
+                menu.classList.toggle('is-active');
+                burger.classList.toggle('is-active');
+            });
+        });
+    </script>
+
+    <!-- Footer -->
+    <footer>
+        <!-- Puede ser solo una barra sin contenido, como mencionaste -->
+    </footer>
+
 </body>
+
+
 
 </html>
